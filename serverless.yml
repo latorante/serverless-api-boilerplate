@@ -1,0 +1,54 @@
+# App Service Name
+service: serverless-api-boilerplate
+
+custom:
+  #setup: ${file(setup.js):init}
+environment:
+  SLS_DEBUG: debug
+
+# Provider settings
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: dev
+  region: ap-southeast-2
+  versionFunctions: false
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+package:
+  include:
+    - resources/**
+    - services/**
+    - common/**
+
+#  exclude:
+# exclude, if any?
+
+functions:
+
+  # Custom auth funciton
+  auth:
+    handler: handler.auth
+
+  # Custom postAuthentification function
+  #authPost:
+  #  handler: handler.authPost
+  #  events:
+  #     To see events we can hook into, check AWS lambda triggers
+  #     http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-working-with-aws-lambda-triggers.html
+
+  #---------------------------------------------------
+  # Api Endpoints
+
+  todos: ${file(resources/todos/config.yml)}
+
+#  hello:
+#    handler: handler.todos
+#    events:
+#      - http:
+#          method: get
+#          path: hello
+#          integration: lambda

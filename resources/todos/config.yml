@@ -1,0 +1,7 @@
+handler: handler.todos
+events:
+  - http:
+      path: todos
+      method: get
+      integration: lambda
+      #authorizer: auth

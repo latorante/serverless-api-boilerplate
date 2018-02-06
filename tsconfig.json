@@ -1,0 +1,27 @@
+// https://www.typescriptlang.org/docs/handbook/compiler-options.html
+{
+  "compilerOptions": {
+    "preserveConstEnums": true,
+    "strictNullChecks": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "ES6",
+    "module": "commonjs",
+    "sourceMap": true,
+    "lib": [
+      "dom",
+      "ES5",
+      "scripthost",
+      "es2015.promise",
+      "ES6"
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "useBabel": true,
+    "forkChecker": true,
+    "useCache": false
+  }
+}

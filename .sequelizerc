@@ -1,0 +1,10 @@
+"use strict";
+
+var path = require('path');
+
+module.exports = {
+  'config': path.resolve('services/database', 'config/config.js'),
+  'migrations-path': path.resolve('services/database', 'migrations'),
+  'models-path': path.resolve('services/database', 'models'),
+  'seeders-path': path.resolve('services/database', 'seeders')
+}
